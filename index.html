@@ -1,0 +1,518 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <title>%%title%%</title>
+    <meta content="%%description%%" name="description">
+    <meta property="og:title" content="%%title%%">
+    <meta property="og:description" content="%%description%%">
+    <meta property="og:type" content="website">
+    <style>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: #fff;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+optgroup,
+strong {
+  font-weight: 700;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  margin: 0.67em 0;
+}
+
+mark {
+  color: #000;
+  background: #ff0;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre,
+textarea {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-size: 1em;
+  font-family: monospace, monospace;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+legend {
+  padding: 0;
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+    </style>
+    <style>
+    body {
+      color: #161024;
+      font-weight: 500;
+      font-size: 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.1px;
+    }
+    h1,
+    .h1 {
+      font-size: 29px;
+      line-height: 1.275;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 18px;
+    }
+    strong,
+    b {
+      font-weight: 600;
+    }
+    p a {
+      color: #00b2e1;
+      font-weight: inherit;
+      text-decoration: underline;
+    }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
+      height: 100vh;
+    }
+    .hero header {
+      padding: 40px 40px 20px;
+      color: #fff;
+      text-align: center;
+      background-color: #161024;
+    }
+    .hero__middle {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    .hero__text {
+      padding: 66px 130px 80px;
+      text-align: center;
+    }
+    .hero__text h2 {
+      color: #00b2e1;
+      text-transform: uppercase;
+    }
+    .hero footer {
+      padding: 30px 40px;
+      background-color: #161024;
+    }
+    .filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -5px;
+      padding: 0;
+      list-style: none;
+    }
+    .filter-list li {
+      margin: 5px;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #1f3d7b;
+      border: 2px solid #161024;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .filter-list [data-filter*=".monday"],
+    .monday {
+      color: #fff;
+      background-color: #9b268e;
+    }
+    .filter-list [data-filter*=".tuesday"],
+    .tuesday {
+      color: #fff;
+      background-color: #1f3d7b;
+    }
+    .filter-list [data-filter*=".wednesday"],
+    .wednesday {
+      color: #1f3d7b;
+      background-color: #f4b11d;
+    }
+    .filter-list [data-filter*=".poster"],
+    .poster {
+      color: #fff;
+      background-color: #00b2e1;
+    }
+
+    .grid-item {
+      width: 320px;
+      margin-bottom: 35px;
+      border: 2px solid #161024;
+      border-radius: 11px;
+    }
+    .grid-item-content {
+      padding: 20px;
+      cursor: pointer;
+    }
+    .grid-item.is-expanded {
+      width: 960px;
+      color: #1f3d7b;
+      background-color: #fff;
+    }
+    .video,
+    .abstract {
+      display: none;
+    }
+    .grid-item.is-expanded .video,
+    .grid-item.is-expanded .abstract {
+      display: block;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <header>
+          <h1>Trish Track</h1>
+        </header>
+        <div class="hero__middle">
+          <div class="container">
+            <div class="hero__text">
+              <h2 class="h1">Welcome HRP IWS 2021 Attendees!</h2>
+              <p>As NASA HRP's partner for disruptive, deep space health technologies, the Translational Research Institute for Space Health (TRISH) funds forward-looking approaches with the potential to become game-changers on exploration class missions.</p>
+              <p>The TRISH Track at the HRP IWS is a series of sessions that highlight the novel science and technologies of TRISH researchers.</p>
+              <p><strong>Below you'll find a collection of pre-recorded scientific presentations. Join the TRISH track sessions during the virtual IWS to participate in live discussion and Q&A.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <footer></footer>
+      </section>
+      <section class="content">
+        <div class="container">
+          <h3>Filter</h3>
+
+          <div class="filter-groups">
+            <div class="filter-group">
+              <h4>Conference Day</h4>
+              <ul class="filter-list">
+                <li data-filter=".monday">Monday, 2.1.21</li>
+                <li data-filter=".tuesday">Tuesday, 2.2.21</li>
+                <li data-filter=".wednesday">Wednesday, 2.3.21</li>
+              </ul>
+            </div>
+            <div class="filter-group">
+              <h4>Risk</h4>
+              <ul class="filter-list">
+                <li data-filter=".sans">Sans</li>
+                <li data-filter=".osteo">Osteo</li>
+                <li data-filter=".medical">Medical</li>
+                <li data-filter=".bmed">BMed</li>
+                <li data-filter=".cancer">Cancer</li>
+                <li data-filter=".microhost">Microhost</li>
+                <li data-filter=".degen-cvd">Degen/CVD</li>
+                <li data-filter=".aerobic">Aerobic</li>
+                <li data-filter=".sleep">Sleep</li>
+                <li data-filter=".team">Team</li>
+                <li data-filter=".food">Food</li>
+                <li data-filter=".fracture">Fracture</li>
+              </ul>
+            </div>
+            <div class="filter-group">
+              <h4>Session</h4>
+              <ul class="filter-list">
+                <li data-filter=".next-gen">The Next Generation: Our Future Talent</li>
+                <li data-filter=".food-drugs">Making Food and Drugs on the Fly</li>
+                <li data-filter=".mars">Mars Simulation and Prediction: Your Personalized Toolkit for a Safe Mars Exploration Mission</li>
+                <li data-filter=".cross-cutting">Cross-Cutting Unusual Countermeasures</li>
+                <li data-filter=".brain">Optimize Your Brain</li>
+                <li data-filter=".autonomous-care">Autonomous Medical Care: Novel Technologies</li>
+                <li data-filter=".radiation">Human Tissue Avatars for Space Radiation</li>
+                <li data-filter=".pivoting">Into the Unknown: Pivoting Quickly to Meet Emergent Needs</li>
+                <li data-filter=".poster">Poster</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="grid-item monday sans">
+              <div class="grid-item-content">
+                <div class="video" pardot-region="video-3">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
+                  <p>Risk: Sans</p>
+                  <p>Andrew Ford</p>
+                  <p>2.1.21 | 0900-0930</p>
+                  <div class="toggle">Watch</div>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-item tuesday medical">
+              <div class="grid-item-content">
+                <div class="video" pardot-region="video-3">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
+                  <p>Risk: Medical</p>
+                  <p>Andrew Ford</p>
+                  <p>2.1.21 | 0900-0930</p>
+                  <div class="toggle">Watch</div>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-item wednesday sleep">
+              <div class="grid-item-content">
+                <div class="video" pardot-region="video-3">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
+                  <p>Risk: Sleep</p>
+                  <p>Andrew Ford</p>
+                  <p>2.1.21 | 0900-0930</p>
+                  <div class="toggle">Watch</div>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- End .grid -->
+        </div>
+      </section>
+
+    </main>
+    <footer></footer>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+      const grid = document.querySelector('.grid');
+      const iso = new Isotope(grid, {
+              itemSelector: '.grid-item',
+              masonry: {
+                      columnWidth: 320,
+                      gutter: 35,
+              },
+      });
+
+      const filtersElem = document.querySelector('.filter-groups');
+      filtersElem.addEventListener('click', function (event) {
+              const filterValue = event.target.getAttribute('data-filter');
+              iso.arrange({ filter: filterValue });
+      });
+
+      function radioButtonGroup(buttonGroup) {
+              buttonGroup.addEventListener('click', function (event) {
+                      buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+                      event.target.classList.add('is-checked');
+              });
+      }
+
+      const buttonGroups = document.querySelectorAll('.button-group');
+      for (let i = 0, len = buttonGroups.length; i < len; i++) {
+              const buttonGroup = buttonGroups[i];
+              radioButtonGroup(buttonGroup);
+      }
+
+      grid.addEventListener('click', function (event) {
+              const { target } = event;
+              if (!target.classList.contains('grid-item-content')) {
+                      return;
+              }
+              const itemElem = target.parentNode;
+              itemElem.classList.toggle('is-expanded');
+              iso.layout();
+      });
+    </script>
+  </body>
+</html>
