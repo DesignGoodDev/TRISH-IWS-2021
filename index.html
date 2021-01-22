@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
     <title>%%title%%</title>
     <meta content="%%description%%" name="description">
@@ -218,17 +218,38 @@ th {
     <style>
     body {
       color: #161024;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 16px;
       font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.4375;
       letter-spacing: 0.1px;
     }
     h1,
-    .h1 {
+    .h1,
+    h2,
+    .h2 {
+      font-weight: 600;
       font-size: 29px;
       line-height: 1.275;
       letter-spacing: 1.4px;
       text-transform: uppercase;
+    }
+    h3,
+    .h3 {
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    h4,
+    .h4 {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    h5,
+    .h5 {
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.33px;
     }
     p {
       margin-bottom: 18px;
@@ -241,6 +262,9 @@ th {
       color: #00b2e1;
       font-weight: inherit;
       text-decoration: underline;
+    }
+    .text-center {
+      text-align: center;
     }
     .container {
       width: 100%;
@@ -255,41 +279,247 @@ th {
       flex-direction: column;
       align-items: stretch;
       justify-content: space-between;
-      height: 100vh;
+      height: auto;
+      min-height: 100vh;
     }
     .hero header {
       padding: 40px 40px 20px;
       color: #fff;
       text-align: center;
       background-color: #161024;
+      background-image: url('http://trish.bcm.edu/l/777423/2021-01-21/chnjlr/777423/1611259720jGZGdGY1/stars_header.svg');
+      background-repeat: repeat;
+      background-position: center;
+      background-size: 1403px 134px;
     }
     .hero__middle {
+      display: flex;
+      flex: 1 0 auto;
+      align-items: center;
+      justify-content: center;
       padding-top: 60px;
       padding-bottom: 60px;
+      background-image: url('http://trish.bcm.edu/l/777423/2021-01-21/chnjzw/777423/1611262406sDM4O3eG/TRISH_IWS_Gradient.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
     .hero__text {
-      padding: 66px 130px 80px;
+      padding: 33px 12% 46px;
+      color: #fff;
       text-align: center;
+      background-color: #161024;
     }
     .hero__text h2 {
       color: #00b2e1;
       text-transform: uppercase;
     }
     .hero footer {
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 0;
       padding: 30px 40px;
       background-color: #161024;
+      background-image:
+        url('http://trish.bcm.edu/l/777423/2021-01-21/chnlt3/777423/1611277300JbGhcndG/control_panel_lines_left.svg'),
+        url('http://trish.bcm.edu/l/777423/2021-01-21/chnlt1/777423/1611277300ooNKHIVs/control_panel_lines_right.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-position: 33.333% center, 66.666% center;
+      background-size: contain, contain;
     }
+    .hero-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .controls-left {
+      display: flex;
+      flex: 1 1 30%;
+      align-items: center;
+      justify-content: center;
+    }
+    .controls-center {
+      display: flex;
+      flex: 1 1 40%;
+      align-items: center;
+      justify-content: center;
+    }
+    .controls-right {
+      display: flex;
+      flex: 1 1 30%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .controls-left .logo {
+      flex: 0 0 auto;
+    }
+    .controls-left .joystick {
+      justify-self: flex-end;
+      width: 64px;
+      margin-top: -120px;
+      margin-left: 40px;
+    }
+    .gauge {
+      margin: 0 2px;
+    }
+    [class*="circle-button"] {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 86px;
+      height: 70px;
+      padding: 4px 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #f4b11d;
+      border: 3px solid #1f3d7b;
+      border-radius: 50%;
+    }
+    [class*="circle-button"]::before {
+      position: absolute;
+      bottom: -11px;
+      left: -3px;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-color: #c47400;
+      border: 3px solid #1f3d7b;
+      border-radius: 50%;
+      content: '';
+    }
+    .circle-button--yellow {
+      flex: 0 0 auto;
+      margin: -20px 10px 0;
+    }
+    .circle-button--aqua {
+      background-color: #00b2e1;
+    }
+    .circle-button--aqua::before {
+      background-color: #007ea0;
+    }
+    .circle-button--fuchsia {
+      align-self: flex-start;
+      margin-left: 40px;
+      background-color: #9b268e;
+    }
+    .circle-button--fuchsia::before {
+      background-color: #701166;
+    }
+
+    @media (max-width: 1100px) {
+      .hero footer {
+        background-position: 25% center, 75% center;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero footer {
+        background-position: 2% center, 98% center;
+      }
+      .controls-left .logo {
+        display: none;
+      }
+      .controls-left .joystick {
+        margin-left: 0;
+      }
+      .circle-button--fuchsia {
+        align-self: flex-end;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero footer {
+        padding: 20px;
+        background-image: none;
+      }
+      .hero-controls {
+        flex-wrap: wrap;
+      }
+      .gauge {
+        display: none;
+      }
+      .controls-left {
+        flex: 0 0 100%;
+      }
+      .controls-center {
+        flex: 1 1 50%;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: flex-start;
+      }
+      .controls-right {
+        flex: 1 1 50%;
+        align-items: flex-end;
+      }
+      .controls-left .joystick {
+        width: 54px;
+        margin-top: -140px;
+        margin-bottom: -100px;
+      }
+      .circle-button--yellow {
+        margin: 10px;
+      }
+      .circle-button--fuchsia {
+        align-self: flex-start;
+        margin: -40px 10px 10px -43px;
+      }
+      .circle-button--aqua {
+        margin: 10px;
+      }
+    }
+
+    .content {
+      padding: 50px 0;
+    }
+
+    .filter-groups {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .clear-filters {
+      position: absolute;
+      top: -38px;
+      right: 0;
+      margin: 0;
+      color: #9b268e;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .filter-group {
+      flex: 1 1 50%;
+    }
+    .filter-group:nth-of-type(1) {
+      flex: 0 1 40%;
+    }
+
+    .filter-group h4 {
+      margin-bottom: 12px;
+    }
+
     .filter-list {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 0;
       margin-left: -5px;
       padding: 0;
       list-style: none;
     }
     .filter-list li {
-      margin: 5px;
-      padding: 10px 20px;
+      position: relative;
+      margin: 5px 5px 13px;
+      padding: 6px 20px;
       color: #fff;
+      font-weight: 600;
+      font-size: 14px;
       background-color: #1f3d7b;
       border: 2px solid #161024;
       border-radius: 5px;
@@ -297,61 +527,254 @@ th {
     }
 
     .filter-list [data-filter*=".monday"],
-    .monday {
+    .monday .grid-item-content {
       color: #fff;
       background-color: #9b268e;
     }
     .filter-list [data-filter*=".tuesday"],
-    .tuesday {
+    .tuesday .grid-item-content {
       color: #fff;
       background-color: #1f3d7b;
     }
     .filter-list [data-filter*=".wednesday"],
-    .wednesday {
+    .wednesday .grid-item-content {
       color: #1f3d7b;
       background-color: #f4b11d;
     }
     .filter-list [data-filter*=".poster"],
-    .poster {
+    .poster .grid-item-content {
       color: #fff;
       background-color: #00b2e1;
     }
 
+    .filter-list li::before,
+    .grid-item-content::before {
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      width: calc(100% - 4px);
+      height: 100%;
+      background-color: #08235a;
+      border: 2px solid #161024;
+      border-radius: 11px;
+      content: '';
+    }
+    .filter-list li::before {
+      position: absolute;
+      bottom: -8px;
+      left: -2px;
+      z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #08235a;
+      border: 2px solid #161024;
+      border-radius: 5px;
+      content: '';
+    }
+    .filter-list [data-filter*=".monday"]::before,
+    .grid-item.monday .grid-item-content::before {
+      background-color: #701166;
+    }
+    .filter-list [data-filter*=".wednesday"]::before,
+    .grid-item.wednesday .grid-item-content::before {
+      background-color: #c47400;
+    }
+    .filter-list [data-filter*=".poster"]::before,
+    .grid-item.poster .grid-item-content::before {
+      background-color: #007ea0;
+    }
+
+    .video,
+    .abstract {
+      display: none;
+    }
+    .toggle {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.82px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .toggle .text-alt {
+      display: none;
+    }
+    .toggle::after {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      margin-left: 8px;
+      background-color: #00b2e1;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='11px' height='13px' viewBox='0 0 11 13' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3ETriangle%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='TRISH-IWS-Landing-Page-Drop-Down' transform='translate(-494.000000, -2910.000000)'%3E%3Cg id='Group-8-Copy-16' transform='translate(204.000000, 2709.000000)' stroke='%23161024' stroke-width='3'%3E%3Cg id='Group-4'%3E%3Crect id='Rectangle-Copy-5' fill='%23C47400' x='1.5' y='120.5' width='317' height='127' rx='11'%3E%3C/rect%3E%3Crect id='Rectangle-Copy-6' fill='%23F4B11D' x='1.5' y='1.5' width='317' height='229' rx='11'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3Cg id='Group-3-Copy-16' transform='translate(487.000000, 2905.000000)'%3E%3Ccircle id='Oval' fill='%2300B2E1' cx='11.47608' cy='11.47608' r='11.47608'%3E%3C/circle%3E%3Cpolygon id='Triangle' fill='%23FFFFFF' transform='translate(12.569040, 11.476080) rotate(90.000000) translate(-12.569040, -11.476080) ' points='12.56904 6.55776 18.58032 16.3944 6.55776 16.3944'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: 55% center;
+      background-size: 11px 13px;
+      border-radius: 50%;
+      content: '';
+    }
+
+    /* default to 16:9 */
+    .video {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    body > footer {
+      padding: 80px 0;
+      background-color: #161024;
+      background-image: url('http://trish.bcm.edu/l/777423/2021-01-21/chnjlp/777423/1611259720zRisvQF7/stars_footer.svg');
+      background-repeat: repeat;
+      background-position: center;
+      background-size: 1403px 281px;
+    }
+
+    body > footer .footer-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1440px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    .footer-inner > * {
+      flex: 1 0 auto;
+      text-align: center;
+    }
+    .footer-inner > a:first-child,
+    .footer-inner > div:last-child {
+      flex: 0 0 20%;
+    }
+
+    .grid-item,
+    .grid-sizer {
+      width: 32%;
+      width: calc(33.333% - 35px);
+    }
     .grid-item {
-      width: 320px;
-      margin-bottom: 35px;
+      height: 240px;
+      margin-bottom: 54px;
+    }
+
+    @media (max-width: 991px) {
+      .grid-item,
+      .grid-sizer {
+        width: 47%;
+        width: calc(50% - 35px);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .filter-groups {
+        display: block;
+      }
+      .grid-item,
+      .grid-sizer {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    .grid-item-content {
+      width: 100%;
+      height: 100%;
+      padding: 20px 20px 40px;
       border: 2px solid #161024;
       border-radius: 11px;
     }
-    .grid-item-content {
-      padding: 20px;
-      cursor: pointer;
+
+    .info h5 {
+      display: -webkit-box;
+      margin-top: 0;
+      margin-bottom: 15px;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
+    .info p {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
     .grid-item.is-expanded {
-      width: 960px;
-      color: #1f3d7b;
-      background-color: #fff;
+      /* width: 1030px; */
+      width: 100%;
+      height: auto;
     }
-    .video,
-    .abstract {
+    .grid-item.is-expanded .grid-item-content {
+      padding: 0;
+      color: #161024;
+      background-color: #fff;
+      border: 0;
+    }
+    .grid-item.is-expanded .grid-item-content::before {
       display: none;
     }
     .grid-item.is-expanded .video,
     .grid-item.is-expanded .abstract {
       display: block;
     }
+    .grid-item.is-expanded .video {
+      margin-top: 30px;
+    }
+    .grid-item.is-expanded .toggle {
+      top: 0;
+      right: 0;
+      bottom: auto;
+    }
+    .grid-item.is-expanded .text-alt {
+      display: inline;
+    }
+    .grid-item.is-expanded .text-std {
+      display: none;
+    }
+    .grid-item.is-expanded .toggle::after {
+      display: none;
+    }
+    .grid-item.is-expanded .info h5 {
+      margin-top: 20px;
+      margin-bottom: 17px;
+      font-size: 21px;
+      letter-spacing: 0.41px;
+    }
     </style>
   </head>
   <body>
     <main>
       <section class="hero">
-        <header>
-          <h1>Trish Track</h1>
+        <header pardot-region="heading">
+          <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjkw/777423/1611259041kgJrCRyh/Trish_Track_Logo.svg" alt="TRISH Track Logo">
+          <h1>HRP IWS 2021</h1>
         </header>
-        <div class="hero__middle">
+        <div class="hero__middle" pardot-region="hero-text">
           <div class="container">
             <div class="hero__text">
-              <h2 class="h1">Welcome HRP IWS 2021 Attendees!</h2>
+              <h2>Welcome HRP IWS 2021 Attendees!</h2>
               <p>As NASA HRP's partner for disruptive, deep space health technologies, the Translational Research Institute for Space Health (TRISH) funds forward-looking approaches with the potential to become game-changers on exploration class missions.</p>
               <p>The TRISH Track at the HRP IWS is a series of sessions that highlight the novel science and technologies of TRISH researchers.</p>
               <p><strong>Below you'll find a collection of pre-recorded scientific presentations. Join the TRISH track sessions during the virtual IWS to participate in live discussion and Q&A.</strong></p>
@@ -359,15 +782,36 @@ th {
           </div>
         </div>
 
-        <footer></footer>
+        <footer>
+
+            <div class="hero-controls">
+              <div class="controls-left">
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjr9/777423/1611260978Z4yKzdcz/TRI_Logo_Footer.svg" alt="TRISH Logo" width="188" class="logo">
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjsw/777423/1611261587vgd1uvZT/joystick.svg" alt="Joystick" class="joystick">
+              </div>
+              <div class="controls-center">
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjnc/777423/1611260472rPn8pmIE/IWS_gauge_1.svg" class="gauge">
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjnc/777423/1611260472rPn8pmIE/IWS_gauge_1.svg" class="gauge">
+                <a href="http://bcm.edu/spacehealth" class="circle-button--yellow" target="_blank" rel="noopener noreferrer" pardot-region="control-link-1">TRISH Home</a>
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjnc/777423/1611260472rPn8pmIE/IWS_gauge_1.svg" class="gauge">
+                <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjnc/777423/1611260472rPn8pmIE/IWS_gauge_1.svg" class="gauge">
+              </div>
+              <div class="controls-right">
+                <a href="https://web.cvent.com/event/ddb36a0a-6937-49ba-8eca-086ce232d767" class="circle-button--aqua" target="_blank" rel="noopener noreferrer" pardot-region="control-link-2">Visit HRP IWS</a>
+                <a href="" class="circle-button--fuchsia" target="_blank" rel="noopener noreferrer" pardot-region="control-link-3">Download Agenda</a>
+              </div>
+            </div>
+
+        </footer>
       </section>
       <section class="content">
         <div class="container">
           <h3>Filter</h3>
 
           <div class="filter-groups">
+            <h3 class="clear-filters" data-filter="*">Clear All</h3>
             <div class="filter-group">
-              <h4>Conference Day</h4>
+              <h4>Conference Day:</h4>
               <ul class="filter-list">
                 <li data-filter=".monday">Monday, 2.1.21</li>
                 <li data-filter=".tuesday">Tuesday, 2.2.21</li>
@@ -375,15 +819,15 @@ th {
               </ul>
             </div>
             <div class="filter-group">
-              <h4>Risk</h4>
+              <h4>Risk:</h4>
               <ul class="filter-list">
-                <li data-filter=".sans">Sans</li>
+                <li data-filter=".sans">SANS</li>
                 <li data-filter=".osteo">Osteo</li>
                 <li data-filter=".medical">Medical</li>
                 <li data-filter=".bmed">BMed</li>
                 <li data-filter=".cancer">Cancer</li>
                 <li data-filter=".microhost">Microhost</li>
-                <li data-filter=".degen-cvd">Degen/CVD</li>
+                <li data-filter=".degen-cvd">Degen/Cvd</li>
                 <li data-filter=".aerobic">Aerobic</li>
                 <li data-filter=".sleep">Sleep</li>
                 <li data-filter=".team">Team</li>
@@ -392,7 +836,7 @@ th {
               </ul>
             </div>
             <div class="filter-group">
-              <h4>Session</h4>
+              <h4>Session:</h4>
               <ul class="filter-list">
                 <li data-filter=".next-gen">The Next Generation: Our Future Talent</li>
                 <li data-filter=".food-drugs">Making Food and Drugs on the Fly</li>
@@ -400,7 +844,7 @@ th {
                 <li data-filter=".cross-cutting">Cross-Cutting Unusual Countermeasures</li>
                 <li data-filter=".brain">Optimize Your Brain</li>
                 <li data-filter=".autonomous-care">Autonomous Medical Care: Novel Technologies</li>
-                <li data-filter=".radiation">Human Tissue Avatars for Space Radiation</li>
+                <li data-filter=".tissue-avatars">Human Tissue Avatars for Space Radiation</li>
                 <li data-filter=".pivoting">Into the Unknown: Pivoting Quickly to Meet Emergent Needs</li>
                 <li data-filter=".poster">Poster</li>
               </ul>
@@ -408,111 +852,1519 @@ th {
           </div>
 
           <div class="grid">
-            <div class="grid-item monday sans">
+            <div class="grid-sizer"></div>
+
+            <!-- Begin .next-gen Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item monday sans next-gen" pardot-region="card-1">
               <div class="grid-item-content">
-                <div class="video" pardot-region="video-3">
+                <div class="video">
                   <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
                   </div>
                 </div>
                 <div class="info">
                   <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
-                  <p>Risk: Sans</p>
-                  <p>Andrew Ford</p>
-                  <p>2.1.21 | 0900-0930</p>
-                  <div class="toggle">Watch</div>
+                  <p>Risk: SANS</p>
+                  <p>Investigator: Andrew Ford</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
                 </div>
                 <div class="abstract">
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                 </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
               </div>
             </div>
+            <!-- End Card -->
 
-            <div class="grid-item tuesday medical">
+
+            <!-- Begin Card -->
+            <div class="grid-item monday osteo next-gen" pardot-region="card-2">
               <div class="grid-item-content">
-                <div class="video" pardot-region="video-3">
+                <div class="video">
                   <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
                   </div>
                 </div>
                 <div class="info">
-                  <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
+                  <h5>Genetic Variation Affects Bone Response To Hindlimb Suspension</h5>
+                  <p>Risk: Osteo</p>
+                  <p>Investigator: Michael Friedman</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item monday osteo next-gen" pardot-region="card-3">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Impact Of Progestin-Only Implanted Contraception On Bone Loss Associated With Hindlimb Unloading</h5>
+                  <p>Risk: Osteo</p>
+                  <p>Investigator: Heather Allaway</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item monday medical next-gen" pardot-region="card-4">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Monitoring Biomarkers For Muscular Atrophy Using An Electronic Chip For Astronaut Health</h5>
                   <p>Risk: Medical</p>
-                  <p>Andrew Ford</p>
-                  <p>2.1.21 | 0900-0930</p>
-                  <div class="toggle">Watch</div>
+                  <p>Investigator: Morgan Anderson</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
                 </div>
                 <div class="abstract">
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                 </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
               </div>
             </div>
+            <!-- End Card -->
 
-            <div class="grid-item wednesday sleep">
+
+            <!-- Begin Card -->
+            <div class="grid-item monday bmed next-gen" pardot-region="card-5">
               <div class="grid-item-content">
-                <div class="video" pardot-region="video-3">
+                <div class="video">
                   <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width=" 480"></iframe>
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
                   </div>
                 </div>
                 <div class="info">
-                  <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
-                  <p>Risk: Sleep</p>
-                  <p>Andrew Ford</p>
-                  <p>2.1.21 | 0900-0930</p>
-                  <div class="toggle">Watch</div>
+                  <h5>Late Effects Of Safe Irradiation On Murine Social Dominance Are Sex-Dependent</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Frederico Kiffer</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
                 </div>
                 <div class="abstract">
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                 </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
               </div>
             </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item monday bmed next-gen" pardot-region="card-6">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Mechanisms Of Protection From Radiation By Natural Proteins</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Lindsey Haggett</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item monday bmed next-gen" pardot-region="card-7">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>The Role Of Spatial Acuity In A Dynamic Balancing Task In A Spaceflight Analog Environment</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Vivekanand Vimal</p>
+                  <p>2.1.21 | 1 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .next-gen Session -->
+
+            <!-- Begin .food-drugs Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical food-drugs" pardot-region="card-8">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Rapid Plant-Based Production Of Therapeutic Countermeasures For Deep Space Missions</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Karen Mcdonald</p>
+                  <p>2.2.21 | 10 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical food-drugs" pardot-region="card-9">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Therapeutic Biosynthesis By Enzymatic Protein-Based Materials</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: David Howell</p>
+                  <p>2.2.21 | 10 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical food-drugs" pardot-region="card-10">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Just In Time Medications From Gastrointestinal Resident Microbial Systems</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Robert Langer</p>
+                  <p>2.2.21 | 10 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical food-drugs" pardot-region="card-11">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Facile Accelerated Specific Therapeutic (Fast) Platform For Radiation Countermeasures</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Anushree Chatterjee</p>
+                  <p>2.2.21 | 10 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed food-drugs" pardot-region="card-12">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Development Of Next-Generation Probiotics To Combat Mental Health Risks For Space Travel</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Philip Strandwitz</p>
+                  <p>2.2.21 | 10 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .food-drugs Session -->
+
+            <!-- Begin .mars Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical mars" pardot-region="card-13">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Detecting Adverse Health Events With Longitudinal Omics Monitoring</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: George Mias</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday medical mars" pardot-region="card-14">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Virtual Human Simulation Platform</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Erik Funkhouser</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday cancer mars" pardot-region="card-15">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Developing A Medical Data Repository For International Retired Crew Members: A Feasibility Project</h5>
+                  <p>Risk: Cancer</p>
+                  <p>Investigator: Bonnie Dunbar</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed mars" pardot-region="card-16">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Conversational Intelligent Agents For Astronaut Behavi Health And Performance</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Rachna Dhamija</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed mars" pardot-region="card-17">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Oculometric Cognition Testing And Analysis In Virtual Environments (Octave)</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Josh Ruben</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed mars" pardot-region="card-18">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Space Flights Associated Changes In Astronauts Plasma Derived Mirna: Biomarker Identification</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: David Goukassian</p>
+                  <p>2.2.21 | 12:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .mars Session -->
+
+            <!-- Begin .cross-cutting Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday sleep cross-cutting" pardot-region="card-19">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Oasis: Optimizing Auditory Stimulation To Improve Cognitive Performance Using Smartsleep</h5>
+                  <p>Risk: Sleep</p>
+                  <p>Investigator: Giulio Tononi</p>
+                  <p>2.2.21 | 2:15 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday degen-cvd cross-cutting" pardot-region="card-20">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Gene Therapy Countermeasures For Detrimental Effects Of Space Radiation</h5>
+                  <p>Risk: Degen/Cvd</p>
+                  <p>Investigator: Dawn Bowles</p>
+                  <p>2.2.21 | 2:15 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday cancer cross-cutting" pardot-region="card-21">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Effects Of Mars Mission-Equivalent Doses Of Sep And Gcr Radiation On The Gastrointestinal System</h5>
+                  <p>Risk: Cancer</p>
+                  <p>Investigator: Christopher Porada</p>
+                  <p>2.2.21 | 2:15 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed cross-cutting" pardot-region="card-22">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>A Drosophila Screening Platform Identifies Candidate Radioprotectors From Tardigrades</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Donald Fox</p>
+                  <p>2.2.21 | 2:15 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item tuesday bmed cross-cutting" pardot-region="card-23">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Cross-Modal And Multi-Modal Stochastic Resonance To Enhance Crew Perception As A Countermeasure For Performance Degradation</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Allison Anderson</p>
+                  <p>2.2.21 | 2:15 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .cross-cutting Session -->
+
+            <!-- Begin .brain Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday sleep brain" pardot-region="card-24">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Evaluation Of Smartsleep Technology For Improving The Efficiency And Restorative Quality Of Sleep In Healthy Adults In Order To Mitigate Cognitive Performance Deficits Due To Sleep Restriction And Emergency Awakenings</h5>
+                  <p>Risk: Sleep</p>
+                  <p>Investigator: David Dinges</p>
+                  <p>2.3.21 | 8:30 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical brain" pardot-region="card-25">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Advanced Algorithms For The Prediction Of Adverse Cognitive And Behavi Conditions In Space</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Mathias Basner</p>
+                  <p>2.3.21 | 8:30 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday bmed brain" pardot-region="card-26">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Transcranial Magnetic Stimulation (Tms) Motor Thresholds Are Altered In Microgravity</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Donna Roberts</p>
+                  <p>2.3.21 | 8:30 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday aerobic brain" pardot-region="card-27">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Telemedicine-Based Sweat Sensors For Stress And Anxiety Monitoring</h5>
+                  <p>Risk: Aerobic</p>
+                  <p>Investigator: Wei Gao</p>
+                  <p>2.3.21 | 8:30 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .brain Session -->
+
+            <!-- Begin .autonomous-care Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical autonomous-care" pardot-region="card-28">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Can Retinal Oct-A Imaging Be Used To Detect Acute Ischemic Stroke?</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Luca Giancardo</p>
+                  <p>2.3.21 | 10:15 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday sans autonomous-care" pardot-region="card-29">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Create The Technical Requirements, Strategic Roadmap, And Financial Requirements To Develop A Multifunctional Ophthalmic Device For Comprehensive Ophthalmic Vision Testing On Deep Space Missions</h5>
+                  <p>Risk: SANS</p>
+                  <p>Investigator: Bob Main</p>
+                  <p>2.3.21 | 10:15 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical autonomous-care" pardot-region="card-30">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Evaluation Of The Butterfly Iq Ultrasound Imager For Use In Human Space Flight Programs</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Ashot Sargsyan</p>
+                  <p>2.3.21 | 10:15 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical autonomous-care" pardot-region="card-31">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Predicting Body Composition With Partial 3D Optical Scans</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Josh Shepherd</p>
+                  <p>2.3.21 | 10:15 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday bmed autonomous-care" pardot-region="card-32">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Focused Ultrasound Stimulation Of Awake Ovine Brain: Parameter Optimization For The Wearable System</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Seung-Schik Yoo</p>
+                  <p>2.3.21 | 10:15 a.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .autonomous-care Session -->
+
+            <!-- Begin .tissue-avatars Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday microhost tissue-avatars" pardot-region="card-33">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Use Of Microbial Based Countermeasures To Mitigate Radiation Induced Intestinal Damage</h5>
+                  <p>Risk: Microhost</p>
+                  <p>Investigator: Sarah Blutt</p>
+                  <p>2.3.21 | 12:45 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday degen-cvd tissue-avatars" pardot-region="card-34">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Effects Of Chronic High Let Radiation On The Human Heart</h5>
+                  <p>Risk: Degen/Cvd</p>
+                  <p>Investigator: Michael Weil</p>
+                  <p>2.3.21 | 12:45 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday bmed tissue-avatars" pardot-region="card-35">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Counteracting Space Radiation By Targeting Neurogenesis In A Human Brain Organoid Model</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Mirjana Maletic-Savatic</p>
+                  <p>2.3.21 | 12:45 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday bmed tissue-avatars" pardot-region="card-36">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Engineered Human Tissues For Assessing Cosmic Radiation Damage</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Gordana Vunjak-Novakovic</p>
+                  <p>2.3.21 | 12:45 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday bmed tissue-avatars" pardot-region="card-37">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Using Human Stem-Cell Derived Vascular 3d Tissue To Determine Space Radiation Damage</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Sharon Gerecht</p>
+                  <p>2.3.21 | 12:45 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .tissue-avatars Session -->
+
+            <!-- Begin .pivoting Session -->
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical team pivoting" pardot-region="card-38">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Caltech Seed Grant Projects</h5>
+                  <p>Risk: Medical, Team</p>
+                  <p>Investigator: Steve Mayo</p>
+                  <p>2.3.21 | 2:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical pivoting" pardot-region="card-39">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Non-Contact Sleep, Vitals, And Behavior Sensing</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Dina Katabi</p>
+                  <p>2.3.21 | 2:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday medical pivoting" pardot-region="card-40">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Space-Based Paper Microfluidic Vertical Flow Assay For Rapid Multiplex Diagnostics (Vfd) In Covid-19 Pandemic Response And Recovery</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Frederic Zenhausern</p>
+                  <p>2.3.21 | 2:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item wednesday degen-cvd pivoting" pardot-region="card-41">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Circulating Mirna Spaceflight Signature Reveals Targets To Mitigate Associated Health Risks</h5>
+                  <p>Risk: Deven/Cvd</p>
+                  <p>Investigator: Afshin Beheshti</p>
+                  <p>2.3.21 | 2:30 p.m. C.T.</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .pivoting Session -->
+
+            <!-- Begin .poster section -->
+
+            <!-- Begin Card -->
+            <div class="grid-item medical poster" pardot-region="card-42">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>A Latent Variable Analysis Of The Role Of Dehydration On Weight Loss And Blood Composition In Project Mercury</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Robert Reynolds</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item microhost poster" pardot-region="card-43">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Development Of Machine Learning-Derived Microbiological And Immune Signatures: Applications In Adaptive Risk Assessment Of Infectious Disease During Spaceflight</h5>
+                  <p>Risk: Microhost</p>
+                  <p>Investigator: Kristyn Hoffman</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item fracture poster" pardot-region="card-44">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Investigating The Effects Of Simulated Microgravity By Hindlimb Suspension On Murine Bone Fracture Healing</h5>
+                  <p>Risk: Fracture</p>
+                  <p>Investigator: Evan Buettmann</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item sleep poster" pardot-region="card-45">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Manipulating Sleep Architecture As An Operational Countermeasure</h5>
+                  <p>Risk: Sleep</p>
+                  <p>Investigator: Matthew Gaidica</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item medical poster" pardot-region="card-46">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Medical Oxygen Delivery System In Exploration Atmosphere Minimizing The Risk Of Fire</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: M. Arifur Rahman</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item medical poster" pardot-region="card-47">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Assembly Of Hepatic Organoids And Microporous Polycaprolactone Bioscaffolds In Simulated Microgravity</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Maria Sekyi</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item sans poster" pardot-region="card-48">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Development Of A Goggle-Based Visual Field Device Prototype</h5>
+                  <p>Risk: SANS</p>
+                  <p>Investigator: Bob Main</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item sans poster" pardot-region="card-49">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Development Of Advanced Vision Testing Software For A Goggle-Based Visual Field Device Prototype</h5>
+                  <p>Risk: SANS</p>
+                  <p>Investigator: Bob Main</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item medical poster" pardot-region="card-50">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>In Situ Expression Analysis Of Therapeutic Microbes With Gastrointestinal Devices</h5>
+                  <p>Risk: Medical</p>
+                  <p>Investigator: Miguel Jimenez</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item food poster" pardot-region="card-51">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Design Of Plant Growth Environment As A Tool For Optimization Of Duckweed As A Space Crop</h5>
+                  <p>Risk: Food</p>
+                  <p>Investigator: Barbara Demmig-Adams</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item food poster" pardot-region="card-52">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Development Of Space Tomatoes: Small Plants For Agriculture In Confined Environments</h5>
+                  <p>Risk: Food</p>
+                  <p>Investigator: Robert Jinkerson</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item degen-cvd poster" pardot-region="card-53">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Let Dependent Low Dose And Synergistic Inhibition Of Human Angiogenesis By Charged Particles: Validation Of Micrornas That Drive Inhibition</h5>
+                  <p>Risk: Degen/Cvd</p>
+                  <p>Investigator: Afshin Beheshti</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item degen-cvd poster" pardot-region="card-54">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Beyond Low-Earth Orbit: Characterizing Immune And Microrna Differentials Following Simulated Deep Spaceflight Conditions In Mice</h5>
+                  <p>Risk: Degen/Cvd</p>
+                  <p>Investigator: Afshin Beheshti</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item degen-cvd poster" pardot-region="card-55">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Engineered Human Tissues For Assessing Cosmic Radiation Damage</h5>
+                  <p>Risk: Degen/Cvd</p>
+                  <p>Investigator: Gordana Vunjak-Novakovic</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item cancer poster" pardot-region="card-56">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Using Humanized Mouse Avatars To Define The Effects Of Mars Mission Equivalent Doses Of Sep And Gcr Radiation On Human Hematopoiesis</h5>
+                  <p>Risk: Cancer</p>
+                  <p>Investigator: Christopher Porada</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item cancer poster" pardot-region="card-57">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Curcumin Nanoparticles Alter Gene Expression And Pathway Activation In Ag05965/Mrc-5 Primary Human Fibroblasts Following Simulated Gcr Exposures</h5>
+                  <p>Risk: Cancer</p>
+                  <p>Investigator: Christopher Porada</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item cancer poster" pardot-region="card-58">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Effects Of Mission-Relevant Doses Of Sep/Gcr Radiation On Human Hematopoietic And Gi Systems</h5>
+                  <p>Risk: Cancer</p>
+                  <p>Investigator: Christopher Porada</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item bmed poster" pardot-region="card-59">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Cognitive Performance Enhancement With Stochastic Resonance</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Allison Anderson</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item bmed poster" pardot-region="card-60">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Identifying Stochastic Resonance In Perceptual Threshold Estimation Performance</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Allison Anderson</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item bmed poster" pardot-region="card-61">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Modeling Cellular And Molecular Damages Caused By Galactic Cosmic Ray Simulations Using Human Forebrain Organoids, And Rescuing Effects By Optogenetic Stimulation Of The Fgf Signaling Pathway</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Sharon Gerecht</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+
+            <!-- Begin Card -->
+            <div class="grid-item bmed poster" pardot-region="card-62">
+              <div class="grid-item-content">
+                <div class="video">
+                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
+                  </div>
+                </div>
+                <div class="info">
+                  <h5>Engineered Human Heart Tissues For Studying The Effects Of Galactic Cosmic Radiation On Cardiac Function</h5>
+                  <p>Risk: BMed</p>
+                  <p>Investigator: Sharon Gerecht</p>
+                </div>
+                <div class="abstract">
+                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+                <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+            <!-- End .poster section -->
+
 
           </div> <!-- End .grid -->
+
+          <div class="text-center"><p><strong>TRISH is supported by the NASA Human Research Program through Cooperative Agreement NNX16AO69A. Learn more about TRISH’s research portfolio and funding opportunities at <a href="http://bcm.edu/spacehealth" target="_blank" rel="noopener noreferrer">bcm.edu/spacehealth</a>.</strong></p></div>
         </div>
       </section>
 
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer-inner">
+        <a href="https://www.bcm.edu/" target="_blank" rel="noopener noreferrer">
+          <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjn5/777423/1611260353I1eEDozl/BCMlogo_2x.png" alt="Baylor College of Medicine Logo" width="111">
+        </a>
+        <a href="http://bcm.edu/spacehealth" target="_blank" rel="noopener noreferrer">
+          <img src="http://trish.bcm.edu/l/777423/2021-01-21/chnjr9/777423/1611260978Z4yKzdcz/TRI_Logo_Footer.svg" alt="TRISH Logo" width="261">
+        </a>
+        <div class="spacing-helper"></div>
+      </div>
+    </footer>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+      // polyfill for "closest" method
+      if (!Element.prototype.matches) {
+        Element.prototype.matches =
+          Element.prototype.msMatchesSelector ||
+          Element.prototype.webkitMatchesSelector;
+      }
+
+      if (!Element.prototype.closest) {
+        Element.prototype.closest = function(s) {
+          var el = this;
+
+          do {
+            if (Element.prototype.matches.call(el, s)) return el;
+            el = el.parentElement || el.parentNode;
+          } while (el !== null && el.nodeType === 1);
+          return null;
+        };
+      }
+    </script>
     <script>
       const grid = document.querySelector('.grid');
       const iso = new Isotope(grid, {
-              itemSelector: '.grid-item',
-              masonry: {
-                      columnWidth: 320,
-                      gutter: 35,
-              },
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        masonry: {
+          columnWidth: '.grid-sizer',
+          gutter: 35,
+        }
       });
 
       const filtersElem = document.querySelector('.filter-groups');
       filtersElem.addEventListener('click', function (event) {
-              const filterValue = event.target.getAttribute('data-filter');
-              iso.arrange({ filter: filterValue });
+        const filterValue = event.target.getAttribute('data-filter');
+        iso.arrange({ filter: filterValue });
       });
 
       function radioButtonGroup(buttonGroup) {
-              buttonGroup.addEventListener('click', function (event) {
-                      buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-                      event.target.classList.add('is-checked');
-              });
+        buttonGroup.addEventListener('click', function (event) {
+          buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+          event.target.classList.add('is-checked');
+        });
       }
 
       const buttonGroups = document.querySelectorAll('.button-group');
       for (let i = 0, len = buttonGroups.length; i < len; i++) {
-              const buttonGroup = buttonGroups[i];
-              radioButtonGroup(buttonGroup);
+        const buttonGroup = buttonGroups[i];
+        radioButtonGroup(buttonGroup);
       }
 
       grid.addEventListener('click', function (event) {
-              const { target } = event;
-              if (!target.classList.contains('grid-item-content')) {
-                      return;
-              }
-              const itemElem = target.parentNode;
-              itemElem.classList.toggle('is-expanded');
-              iso.layout();
-      });
+        const target = event.target;
+        if (!target.matches('.toggle, .toggle *')) {
+          return;
+        }
+        const itemElem = target.closest('.grid-item');
+        itemElem.classList.toggle('is-expanded');
+        iso.layout();
+      }, false);
     </script>
   </body>
 </html>
