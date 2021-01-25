@@ -413,6 +413,37 @@ th {
     .circle-button--fuchsia::before {
       background-color: #701166;
     }
+    .back-to-top {
+      width: 71px;
+      height: 58px;
+      background-color: #701166;
+      border: 3px solid #1f3d7b;
+      border-radius: 50%;
+    }
+    .back-to-top::after {
+      position: absolute;
+      bottom: 6px;
+      left: -3px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 71px;
+      height: 58px;
+      padding: 4px 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08px;
+      text-align: center;
+      text-decoration: none;
+      background-color: #9b268e;
+      border: 3px solid #1f3d7b;
+      border-radius: 50%;
+      content: 'Back to top';
+    }
 
     @media (max-width: 1100px) {
       .hero footer {
@@ -663,7 +694,8 @@ th {
       padding-left: 40px;
     }
     .footer-inner > * {
-      flex: 1 0 auto;
+      flex: 1 1 auto;
+      margin: 0 10px;
       text-align: center;
     }
     .footer-inner > a:first-child,
@@ -697,6 +729,9 @@ th {
       .grid-sizer {
         width: 100%;
         height: 200px;
+      }
+      .footer-inner .spacing-helper {
+        display: none;
       }
     }
 
@@ -861,9 +896,9 @@ th {
             <div class="grid-item monday sans next-gen" pardot-region="card-1">
               <div class="grid-item-content">
                 <div class="video">
-                  <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
+                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
                     <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="info">
                   <h5>Investigating The Combinatorial Effects Of Intraocular Pressure And Hypobaric Hypoxia On Corneal Function</h5>
@@ -885,7 +920,6 @@ th {
               <div class="grid-item-content">
                 <div class="video">
                   <div data-oembed-url="https://www.youtube.com/watch?v=hEz70JX9-YM"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="113" src="https://www.youtube.com/embed/hEz70JX9-YM?feature=oembed" tabindex="-1" width="200"></iframe></div>
-                </div>
                 </div>
                 <div class="info">
                   <h5>Genetic Variation Affects Bone Response To Hindlimb Suspension</h5>
@@ -1030,7 +1064,7 @@ th {
                 </div>
                 <div class="abstract">
                   <p>Transient production of therapeutic countermeasures in plants</p>
-<a href="https://cdn-uploads.preciscentral.com/Download/Submissions/659D1A5FEA57689D/A90CE71986C56C3F.pdf" target="_blank">Read Abstract</a>
+                  <a href="https://cdn-uploads.preciscentral.com/Download/Submissions/659D1A5FEA57689D/A90CE71986C56C3F.pdf" target="_blank">Read Abstract</a>
                 </div>
                 <div class="toggle"><span class="text-std">Watch</span><span class="text-alt">Close</span></div>
               </div>
@@ -1712,9 +1746,7 @@ th {
             <div class="grid-item wednesday medical pivoting" pardot-region="card-39">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Non-Contact Sleep, Vitals, And Behavior Sensing</h5>
@@ -1782,9 +1814,7 @@ th {
             <div class="grid-item medical poster" pardot-region="card-42">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>A Latent Variable Analysis Of The Role Of Dehydration On Weight Loss And Blood Composition In Project Mercury</h5>
@@ -2013,9 +2043,7 @@ th {
             <div class="grid-item degen-cvd poster" pardot-region="card-53">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Let Dependent Low Dose And Synergistic Inhibition Of Human Angiogenesis By Charged Particles: Validation Of Micrornas That Drive Inhibition</h5>
@@ -2035,9 +2063,7 @@ th {
             <div class="grid-item degen-cvd poster" pardot-region="card-54">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Beyond Low-Earth Orbit: Characterizing Immune And Microrna Differentials Following Simulated Deep Spaceflight Conditions In Mice</h5>
@@ -2057,9 +2083,7 @@ th {
             <div class="grid-item degen-cvd poster" pardot-region="card-55">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Engineered Human Tissues For Assessing Cosmic Radiation Damage</h5>
@@ -2079,9 +2103,7 @@ th {
             <div class="grid-item cancer poster" pardot-region="card-56">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Using Humanized Mouse Avatars To Define The Effects Of Mars Mission Equivalent Doses Of Sep And Gcr Radiation On Human Hematopoiesis</h5>
@@ -2143,9 +2165,7 @@ th {
             <div class="grid-item bmed poster" pardot-region="card-59">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Cognitive Performance Enhancement With Stochastic Resonance</h5>
@@ -2165,9 +2185,7 @@ th {
             <div class="grid-item bmed poster" pardot-region="card-60">
               <div class="grid-item-content">
                 <div class="video">
-                  <!-- <div data-oembed-url="https://www.youtube.com/watch?v=_fRSaLAEW2s">
-                    <iframe allowfullscreen="allowfullscreen" frameborder="0" height="270" src="https://www.youtube.com/embed/_fRSaLAEW2s?feature=oembed" tabindex="-1" width="480"></iframe>
-                  </div> -->
+
                 </div>
                 <div class="info">
                   <h5>Identifying Stochastic Resonance In Perceptual Threshold Estimation Performance</h5>
@@ -2304,6 +2322,56 @@ th {
         itemElem.classList.toggle('is-expanded');
         iso.layout();
       }, false);
+    </script>
+    <script>
+      function ready( callback ) {
+        if (document.readyState != 'loading') callback();
+        else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+        else document.attachEvent('onreadystatechange', function() {
+          if (document.readyState == 'complete') callback();
+        });
+      }
+
+      ready( function() {
+        addScrollToTopButton();
+      });
+
+      function addScrollToTopButton() {
+        const btn = document.createElement('a');
+
+        // build, style, position btn in corner, hidden for now
+        btn.href = '#';
+        btn.title = 'Back to top';
+        btn.className = 'back-to-top';
+        btn.setAttribute('style', 'position:fixed;bottom:20px;right:20px;text-transform:uppercase;visibility:hidden;opacity:0;transition:all 250ms ease;');
+
+        // add btn to bottom of Body
+        document.body.appendChild(btn);
+
+        // scroll up on click
+        btn.addEventListener( 'click', scrollMeUp );
+        function scrollMeUp() {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
+
+        // show btn when scroll past 1000px from top
+        window.addEventListener('scroll', scrollFunctionButton);
+        function scrollFunctionButton() {
+          setTimeout( function() {
+            if ( window.pageYOffset > 1000 ) {
+              btn.style.visibility = 'visible';
+              btn.style.opacity = '1';
+            } else {
+              btn.style.visibility = 'hidden';
+              btn.style.opacity = '0';
+            }
+          }, 350);
+        }
+      }
     </script>
   </body>
 </html>
